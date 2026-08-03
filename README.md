@@ -1,3 +1,4 @@
+```text
 java-til/
 ├── README.md                  # 전체 학습 목차 및 대시보드
 ├── .gitignore                 # 빌드 파일(.class, .idea 등) 제외 설정
@@ -18,5 +19,6 @@ java-til/
 │   └── 04-interface/
 │
 └── 04-collections/            # 4단계: 컬렉션 프레임워크 (List, Map, Set)
-    ├── ArrayListTest.java
-    └── HashMapTest.java
+├── ArrayListTest.java
+└── HashMapTest.java
+```
