@@ -79,5 +79,51 @@ public class MemoryAllocation {
             }
             System.out.println(" ");
         }
+
+        // 2.1. 이차원 배열로 구구단 프로그램 만들기
+        int[][] gugudan = new int[9][9]; // 이차원 배열 생성
+        for(int i=0; i<9; i++) {
+            System.out.println("--- " + (i+1) + "단 ---");
+            for(int j=0; j<9; j++) {
+                gugudan[i][j] = (i + 1) * (j + 1);
+                System.out.println((i+1) + " x " + (j+1) + " = " + gugudan[i][j]);
+            }
+        }
+
+        // 3. 참조 자료형으로서의 배열
+        // 참조: 실제 값이 아닌 주소를 저장하는 것
+        // 참조 변수(reference variable): ㅔ모리 주소를 저장하는 변수
+        // 자바 프로그램 JVM(자바 가상 머신)통해 OS으로부터 메모리 할당받음
+        // -> 런타임 데이터 영역: 메서드 영역(낮은 주소) < 힙 < 스택 < PC 레지스터 < 네이티브 메서드 스택(높은 주소)
+        // 힙: 배열 실제 int[] arr1의 값 {1, 2, 3};
+        // 스택: 참조 변수 ex) int[] arr1의 주소 0x200, 일반 변수의 값 저장됨
+
+        // 3.1. 배열의 복사
+        int a = 1;
+        int b = a; // b의 값은 1
+
+        // 얕은 복사, 깊은 복사
+        int[] originArray = {1,2,3};
+        int[] copyArray = originArray;
+        System.out.println(copyArray[0]);   // 1
+        System.out.println(copyArray[1]);   // 2
+        System.out.println(copyArray[2]);   // 3
+
+        copyArray[0] = 10;
+        // copyArray와 originArray 변수는 같은 배열을 참조함 originArray[0]도 변경
+        System.out.println(originArray[0]);
+
+        // 얕은 복사(shallow copy): 배열을 복사했을 때 동일한 배열을 가리키는 것
+        //                         배열의 주소만 복사, 한쪽 변경하면 다른 쪽도 변경됨
+        // 깊은 복사(deep copy): 배열의 모든 요소를 복사해 새로운 배열 생성
+        //                      깊은 복사된 배열은 원본 배열과 별개의 메모리 공간에 존재.
+        // ex)
+        int[] originArray2 = {1,2,3};
+        int[] deepCopyArray = new int[originArray2.length];
+        for(int i=0; i<originArray2.length; i++) {
+            deepCopyArray[i] = originArray2[i];
+        }
+        deepCopyArray[0] = 10;
+        System.out.println(originArray2[0]); // 1 출력
     }
 }
