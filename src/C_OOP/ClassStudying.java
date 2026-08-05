@@ -107,6 +107,7 @@ public class ClassStudying {
     public static void main(String[] args) {
         // 객체 생성
         // 클래스명 변수명 = new 클래스명();
+        //
         Car myCar = new Car();
     }
 }
