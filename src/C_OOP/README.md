@@ -3,7 +3,9 @@
 ## 객체 생성
 ### new 키워드를 사용한 객체 생성과 참조
 
+
 <img width="1282" height="384" alt="image" src="https://github.com/user-attachments/assets/a0175757-6227-462d-a1a3-d8a425377c7f" />
+
 
 - **메서드 영역(Method Area):**
   - 프로그램이 시작될 때 클래스 관련 정보가 저장되는 공간.
@@ -27,7 +29,9 @@
 
 **new 키워드로 객체 생성하는 과정**
 
+
 <img width="4000" height="2252" alt="자바new객체생성" src="https://github.com/user-attachments/assets/457ce96a-1048-44da-99c3-8c3dbb29099b" />
+
 
 
 1. new 키워드 사용 -> 객체 힙 영역에 생성
