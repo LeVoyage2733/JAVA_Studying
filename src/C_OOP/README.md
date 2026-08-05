@@ -56,4 +56,16 @@ String str2 = "Hello";
 String str3 = new String("Hello");
 String str4 = new String("Hello");
 ```
+  
+  1. **문자열 리터럴 방식("Hello")**
+
+     - "Hello"와 같이 큰따옴표(리터럴)로 문자열 생성 -> JAVA 문자열 상수 풀 확인
+     - 상수 풀 동일한 내용 문자열 x: 새로운 String 객체 생성 및 주소값 반환
+     - 상수 풀 동일한 내용 문자열 o: 기존 상수 풀 객체 주소값 **재사용**
+
+  2. **new 키워드 생성 방식(new String("Hello"))
+
+     - new 키워드 사용 -> **힙 메모리**의 별도 공간에 항상 **새로운 객체 생성**
+     - str3와 str4 내부 문자열 값 같지만, 메모리 주소값 다름
+    
 
