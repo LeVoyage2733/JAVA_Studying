@@ -30,7 +30,7 @@
 **new 키워드로 객체 생성하는 과정**
 
 
-<img width="4000" height="2252" alt="자바new객체생성" src="https://github.com/user-attachments/assets/457ce96a-1048-44da-99c3-8c3dbb29099b" />
+<img alt="자바new객체생성" src="https://github.com/user-attachments/assets/457ce96a-1048-44da-99c3-8c3dbb29099b" width="50%"/>
 
 
 
