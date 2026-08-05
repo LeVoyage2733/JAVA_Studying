@@ -69,3 +69,18 @@ String str4 = new String("Hello");
      - str3와 str4 내부 문자열 값 같지만, 메모리 주소값 다름
     
 
+## 클래스 심화
+
+### static
+
+```
+public static void main(String[] args) {
+}
+// static이 무엇일까?
+```
+
+**런타임 데이터 영역** 속 **메서드 영역**
+
+- 메서드 영역: 클래스 변수, 클래스 메서드 저장
+  - 프로그램 시작 시 할당, 종료 시 반환
+  - 클래스 변수/클래스 메서드 앞에 static 붙음
