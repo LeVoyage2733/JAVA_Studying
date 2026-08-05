@@ -47,7 +47,7 @@
 
 2. **두 가지 생성 방식과 메모리 차이**
 
-'''
+```
 // 1. 문자열 리터럴 방식
 String str1 = "Hello";
 String str2 = "Hello";
@@ -55,5 +55,5 @@ String str2 = "Hello";
 // 2. new 키워드 생성 방식
 String str3 = new String("Hello");
 String str4 = new String("Hello");
-'''
+```
 
