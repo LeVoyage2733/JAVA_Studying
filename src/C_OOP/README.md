@@ -1,8 +1,7 @@
 # 클래스 정리
 
 ## 객체 생성
-### new 키워드를 사용한 객체 생성과 참조
-
+### 1. new 키워드를 사용한 객체 생성과 참조
 
 <img width="641" height="192" alt="image" src="https://github.com/user-attachments/assets/a0175757-6227-462d-a1a3-d8a425377c7f" />
 
@@ -33,9 +32,27 @@
 <img alt="자바new객체생성" src="https://github.com/user-attachments/assets/457ce96a-1048-44da-99c3-8c3dbb29099b" width="50%"/>
 
 
-
 1. new 키워드 사용 -> 객체 힙 영역에 생성
 2. 객체 생성 -> 객체 주소가 new 키워드 사용한 곳으로 반환
 3. 클래스로 참조 변수 선언
 4. 반환된 주소를 참조 변수에 저장
 5. 저장된 주소로 해당 객체를 참조
+
+### 2. 문자열 리터럴과 new 키워드 차이
+
+1. **문자열 상수 풀(String Constanat Pool)**
+
+- JAVA **힘(Heap)** 메모리 영역 안에 특별히 존재
+- JAVA 문자열 객체 매우 자주 사용 -> 동일한 문자열 값 여러 번 사용 시 메모리 재사용
+
+2. **두 가지 생성 방식과 메모리 차이**
+
+'''
+// 1. 문자열 리터럴 방식
+String str1 = "Hello";
+String str2 = "Hello";
+
+// 2. new 키워드 생성 방식
+String str3 = new String("Hello");
+String str4 = new String("Hello");
+
