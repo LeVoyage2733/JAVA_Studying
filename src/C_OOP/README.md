@@ -4,7 +4,7 @@
 ### new 키워드를 사용한 객체 생성과 참조
 
 
-<img width="1282" height="384" alt="image" src="https://github.com/user-attachments/assets/a0175757-6227-462d-a1a3-d8a425377c7f" />
+<img width="641" height="192" alt="image" src="https://github.com/user-attachments/assets/a0175757-6227-462d-a1a3-d8a425377c7f" />
 
 
 - **메서드 영역(Method Area):**
