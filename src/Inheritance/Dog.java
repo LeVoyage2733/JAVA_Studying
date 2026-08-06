@@ -1,0 +1,11 @@
+package Inheritance;
+
+public class Dog extends Animal {
+    // 필드
+    String breed; // 견종
+
+    // 메서드
+    public void roll() {
+        System.out.println(name + "이(가) 바닥을 구릅니다.");
+    }
+}
