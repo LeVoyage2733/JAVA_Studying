@@ -84,3 +84,60 @@ public static void main(String[] args) {
 - 메서드 영역: 클래스 변수, 클래스 메서드 저장
   - 프로그램 시작 시 할당, 종료 시 반환
   - 클래스 변수/클래스 메서드 앞에 static 붙음
+
+### 접근 제한자
+
+**접근 제한자**: 
+- 클래스, 변수, 메서드, 생성자 등의 접근 범위를 제한하여 외부로부터 데이터를 보호(캡슐화)
+- 불필요한 노출을 막기 위해 사용하는 키워드
+
+**public**: 접근 제한x
+**protected**: 같은 패키지와 상속받은 클래스
+**default**: 같은 패키지
+**private**: 같은 클래스
+
+예시)
+```
+package sample;
+
+public class Car {
+    // 1. public: 누구나 접근 가능
+    public String modelName;
+
+    // 2. protected: 같은 패키지 또는 상속받은 자식 클래스에서 접근 가능
+    protected int speed;
+
+    // 3. default (키워드를 쓰지 않음): 같은 패키지에서만 접근 가능
+    int fuel;
+
+    // 4. private: 오직 Car 클래스 내부에서만 접근 가능
+    private String serialNumber;
+
+    public Car(String modelName, String serialNumber) {
+        this.modelName = modelName;
+        this.serialNumber = serialNumber; // 클래스 내부이므로 private 접근 가능
+    }
+
+    // private 변수는 보통 getter/setter 메서드를 통해 안전하게 접근합니다.
+    public String getSerialNumber() {
+        return this.serialNumber;
+    }
+}
+```
+
+```
+package sample; // Car와 같은 패키지
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car("소나타", "12345-ABC");
+
+        System.out.println(myCar.modelName);    // OK (public)
+        System.out.println(myCar.speed);        // OK (protected - 같은 패키지)
+        System.out.println(myCar.fuel);         // OK (default - 같은 패키지)
+        
+        // System.out.println(myCar.serialNumber); // 에러! (private은 외부에서 접근 불가)
+        System.out.println(myCar.getSerialNumber()); // OK (public 메서드를 거쳐 접근)
+    }
+}
+```
