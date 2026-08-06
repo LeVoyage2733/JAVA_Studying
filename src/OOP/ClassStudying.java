@@ -101,7 +101,7 @@ JVM의 런타임 시 클래스 로드, 가비지 컬렉터 작동(메모리 동�
 클래스 이름과 같고, 반환형 명시 x, 초기화하는 본문 들어감
 생성자 정의x -> 생성자 자동 생성(매개변수x) == 기본 생성자
  */
-package C_OOP;
+package OOP;
 
 public class ClassStudying {
     public static void main(String[] args) {

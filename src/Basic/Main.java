@@ -1,4 +1,4 @@
-package A_Basic;
+package Basic;
 
 public class Main {
 }

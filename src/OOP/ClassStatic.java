@@ -1,4 +1,4 @@
-package C_OOP;
+package OOP;
 
 public class ClassStatic {
     // 클래스 변수

@@ -1,4 +1,4 @@
-package B_MemoryAndArray;
+package MemoryAndArray;
 
 public class MemoryAllocation {
     public static void main(String[] args) {
