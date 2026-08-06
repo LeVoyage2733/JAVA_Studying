@@ -124,7 +124,7 @@ public class Car {
     }
 }
 ```
-
+메인 클래스
 ```
 package sample; // Car와 같은 패키지
 
