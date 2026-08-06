@@ -71,7 +71,7 @@ String str4 = new String("Hello");
 
 ## 클래스 심화
 
-### static
+### 1. static
 
 ```
 public static void main(String[] args) {
@@ -85,7 +85,7 @@ public static void main(String[] args) {
   - 프로그램 시작 시 할당, 종료 시 반환
   - 클래스 변수/클래스 메서드 앞에 static 붙음
 
-### 접근 제한자
+### 2. 접근 제한자
 
 **접근 제한자**: 
 - 클래스, 변수, 메서드, 생성자 등의 접근 범위를 제한하여 외부로부터 데이터를 보호(캡슐화)
@@ -138,6 +138,56 @@ public class Main {
         
         // System.out.println(myCar.serialNumber); // 에러! (private은 외부에서 접근 불가)
         System.out.println(myCar.getSerialNumber()); // OK (public 메서드를 거쳐 접근)
+    }
+}
+```
+
+### 3. Getter Method, Setter Method
+
+- **게터(Getter)**: 변수의 값을 읽어서 반환해 주는 메서드 (get + 변수명)
+- **세터(Setter)**: 변수의 값을 검증한 후 안전하게 변경해 주는 메서드 (set + 변수명)
+
+-> 객체의 상태(필드)를 외부로부터 직접 노출x, 메서드를 통해 제어
+
+직접접근 피하는 이유
+ - 유효하지 않은 데이터 삽입: 외부에서 필드에 직접 접근 -> person.age = -5같은 잘못된 데이터 검증 없이 들어감
+ - 결합도 증가: 외부 코드에서 필드명 직접 참조, 필드 이름 변경/구조 변경 시 그 필드를 쓰는 모든 외부 코드 수정해야 함
+
+장점
+- 데이터 무결성: 세터 안에서 if문 등을 통해 들어오는 값 -> 검증 가능
+- 읽기 전용/쓰기 전용 필드 구현: 게터만 만들면 외부에서 읽기만 가능함.
+- 내부 구현의 은닉(Flexibility)
+
+```
+public class UserProfile {
+    private String username;
+    private int age;
+
+    // Getter: 외부로 값을 읽어 보내줌
+    public int getAge() {
+        return this.age;
+    }
+
+    // Setter: 조건에 맞는지 확인하고 변경해줌
+    public void setAge(int age) {
+        // [조건 1] 음수이거나 비현실적인 나이는 거부
+        if (age < 0 || age > 150) {
+            System.out.println("유효하지 않은 나이입니다.");
+            return; // 값을 변경하지 않고 종료
+        }
+        
+        // 조건에 맞을 때만 안의 값을 변경
+        this.age = age;
+    }
+
+    public void setUsername(String username) {
+        // [조건 2] 빈 문자열이거나 null인 경우 거부
+        if (username == null || username.trim().isEmpty()) {
+            System.out.println("이름은 빈 값일 수 없습니다.");
+            return;
+        }
+        
+        this.username = username;
     }
 }
 ```
