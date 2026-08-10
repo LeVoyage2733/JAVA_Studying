@@ -10,7 +10,7 @@
 ### 애너테이션:
 **@Override** 애너테이션 추가해 오버라이딩 명시적 표기 가능
 
-
+```
 public class Cat extends Animal {
     public void rub() {
         System.out.println(name + "가 몸을 비빕니다.");
@@ -20,3 +20,5 @@ public class Cat extends Animal {
         System.out.println(name + "가 닭고기를 먹습니다.");
     }
 }
+```
+
