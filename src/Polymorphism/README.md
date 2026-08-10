@@ -123,3 +123,83 @@ public class Main {
     }
 }
 ```
+
+**메서드 호출** -> **참조 변수 선언한 클래스 기준**으로 메서드 찾기
+myAnimal은 Animal형 선언 -> Animal 클래스에 정의된 메서드**만** 사용가능
+(Dog)myAnimal -> Animal에서 Dog로 myAnimal 변수 **Downcasting**하면 **해당 객체 호출 가능**
+
+## 4. super
+**super**: **부모 클래스 참조**하는데 사용함
+   **1. super 키워드는 자식 클래스에서 부모 클래스의 메서드 호출할 때 사용함**
+      - **오버라이딩 된 부모의 원래 메서드/필드 호출(super.메서드명())**
+   ```
+   class Parent {
+      void print() {
+         System.out.println("부모 클래스 메서드");
+      }
+   }
+
+   class Child extends Parent {
+      @Override
+      void print() {
+         super.print(); // 부모의 print() 호출
+         System.out.println("자식 클래스 메서드");
+      }
+   }
+   ```
+
+   **2. super 키워드는 자식 클래스의 생성자에서 부모 클래스의 생성자를 호출할 때 사용함**
+      - **부모 클래스의 생성자 호출(super(...))**
+   ```
+   class Parent {
+      String name;
+      Parent(String name) {
+         this.name = name;
+      }
+   }
+
+   class Child extends Parent {
+      int age;
+      Child(String name, int age) {
+         super(name); // 부모 생성자 호출
+         this.age = age;
+      }
+   }
+   ```
+
+   **3. super 키워드는 부모 클래스의 필드에 접근할 때 사용함**
+      - **1) 자식 클래스와 부모 클래스의 필드(멤버 변수) 이름이 같을 때 (필드 은닉/Shadowing)**
+   ```
+   class Parent {
+      String name = "부모 이름";
+   }
+
+   class Child extends Parent {
+      String name = "자식 이름"; // 부모의 name 필드를 가림(Shadowing)
+
+      void printName() {
+         System.out.println(this.name); // 출력: 자식 이름
+         System.out.println(super.name); // 출력: 부모 이름 (super로 부모 필드 접근)
+      }
+   }
+   ```
+
+      - **2) 이름이 같지 않더라도 명시적으로 부모의 필드임을 나타낼 때**
+            - 자식 클래스에 같은 이름이 없더라도 super.필드명 사용 -> 상속받은 부모의 필드라는 점 코드상에서 명확하게 나타낼 수 있음.
+            - **주의할 점: 접근 제어자(Access Modifier)**
+               - public, protected, default(같은 패키지 내): super.필드명 접근 가능
+               - private: 부모 클래스 내부에서만 접근 가능. 자식 클래스에서 super.필드명 직접 점근 불가능 (부모의 getter 메서드 통해 접근)
+               
+   ```
+   class Parent {
+      public int size = 10;
+      private int secret = 100; // private 필드
+   }
+
+   class Child extends Parent {
+      void test() {
+         System.out.println(super.size);
+         System.out.println(super.secret); // 에러! private 필드는 super로도 접근 불가
+      }
+   }
+   ```
