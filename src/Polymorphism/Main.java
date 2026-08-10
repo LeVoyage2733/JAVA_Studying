@@ -15,5 +15,13 @@ public class Main {
         myCat.age = 4;
         myCat.rub();
         myCat.eat();
+        System.out.print("\n");
+
+        Animal myAnimal1 = new Dog();
+        myAnimal1.name = "장군";
+        myAnimal1.eat();
+        myAnimal1 = new Cat();
+        myAnimal1.name = "꽁치";
+        myAnimal1.eat();
     }
 }
