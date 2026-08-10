@@ -1,3 +1,4 @@
+// 두 인터페이스를 받는 CheckingAccount 클래스
 package Interface;
 
 public class CheckingAccount implements BankAccount, InterestBearing {
