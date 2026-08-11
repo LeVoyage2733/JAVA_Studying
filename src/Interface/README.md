@@ -2,7 +2,7 @@
 
 ## 인터페이스(Interface)란
 
-<img size=70%, alt="자바다중상속문제점" src="https://github.com/user-attachments/assets/fc7b676d-d044-4223-86ad-75fce59d9883" />
+<img size=50%, alt="자바다중상속문제점" src="https://github.com/user-attachments/assets/fc7b676d-d044-4223-86ad-75fce59d9883" />
 
 - 가장 밑의 자식 클래스는 어떤 money() 메서드 사용해야 되는지 혼란 발생
 - 자바는 **다중 상속(multiple inheritance)** 허용x
