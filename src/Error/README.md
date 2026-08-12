@@ -37,7 +37,7 @@
 ## 예외(Exception)
 - def. **프로그램 실행 중 발생**하는 **복구 가능**한 **문제 상황**
 - 
-
+```
               java.lang.Throwable
                         │
                java.lang.Exception
@@ -51,3 +51,4 @@ Checked Exception                      RuntimeException
     ├── IOException                         ├── NullPointerException
     ├── SQLException                        ├── ArrayIndexOutOfBoundsException
     └── FileNotFoundException               └── ArithmeticException
+```
